@@ -1,48 +1,37 @@
-name:                hstu
-version:             0.1.0.0
-github:              "githubuser/hstu"
-license:             BSD3
-author:              "Author name here"
-maintainer:          "example@example.com"
-copyright:           "2020 Author name here"
-
+library:
+  source-dirs: src
+tests:
+  hstu-test:
+    source-dirs: test
+    main: Spec.hs
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - hstu
+copyright: 2020 Author name here
+maintainer: example@example.com
+dependencies:
+- aeson
+- http-conduit
+- base >= 4.7 && < 5
+name: hstu
+version: 0.1.0.0
 extra-source-files:
 - README.md
 - ChangeLog.md
-
-# Metadata used when publishing your package
-# synopsis:            Short description of your package
-# category:            Web
-
-# To avoid duplicated efforts in documentation and dealing with the
-# complications of embedding Haddock markup inside cabal files, it is
-# common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/githubuser/hstu#readme>
-
-dependencies:
-- base >= 4.7 && < 5
-
-library:
-  source-dirs: src
-
+author: Author name here
+github: githubuser/hstu
+license: BSD3
 executables:
   hstu-exe:
-    main:                Main.hs
-    source-dirs:         app
+    source-dirs: app
+    main: Main.hs
     ghc-options:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
     - hstu
-
-tests:
-  hstu-test:
-    main:                Spec.hs
-    source-dirs:         test
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - hstu
+description: Please see the README on GitHub at <https://github.com/githubuser/hstu#readme>
